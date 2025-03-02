@@ -1,0 +1,15 @@
+html,
+body {
+  background-color: #f4f7ff;
+}
+
+.main-container {
+  height: 85vh;
+}
+
+.main-background {
+  background-color: #f4f7ff;
+}
+.border-bottom {
+  border-bottom: 2px dashed rgba(55, 82, 253, 0.2);
+}
