@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="main-page">
 
 <head>
     <meta charset="UTF-8">
@@ -18,19 +18,14 @@
                 <img src="./assets/logo.png" alt="">
                 <h2 class="text-3xl">Dev<span class="font-bold">Board</span></h2>
             </div>
-            <div class="flex-none">
-                <ul class="menu menu-horizontal px-1">
-                    <li><a>Link</a></li>
-                    <li>
-                        <details>
-                            <summary>Parent</summary>
-                            <ul class="bg-base-100 rounded-t-none p-2">
-                                <li><a>Link 1</a></li>
-                                <li><a>Link 2</a></li>
-                            </ul>
-                        </details>
-                    </li>
-                </ul>
+            <div class="flex">
+                <div class="main-background p-3 rounded-full mr-5 flex justify-center items-center">
+                    <i class="fa-solid fa-square-check text-3xl text-blue-600"></i>
+                    <p id="incremental" class="font-bold text-3xl ml-4">23</p>
+                </div>
+                <div class="main-background p-3 rounded-full mr-5">
+                    <button id="randomBtn"><img src="./assets/theme-btn.png" alt=""></button>
+                </div>
             </div>
         </div>
     </header>
@@ -41,16 +36,17 @@
             <div class="grid grid-cols-4 gap-3 p-10 border-bottom">
                 <div class="flex justify-center main-background items-center h-30 rounded-md">
                     <div class="bg-white p-3 rounded-full mr-5">
-                        <i class="fa-solid fa-square-check text-2xl"></i>
+                        <i class="fa-solid fa-square-check text-2xl text-blue-600"></i>
                     </div>
                     <div>
                         <p class="text-gray-600">Task Assigned</p>
-                        <p class="text-3xl font-bold">03</p>
+                        <p id="decremental" class="text-3xl font-bold">6</p>
                     </div>
                 </div>
 
-                <div
-                    class="flex justify-between bg-linear-to-r from-[#3752FD] to-[#9BA8F8] items-center h-30 rounded-md col-span-2 px-10">
+
+                <div id="goToBlogPage" class="flex justify-between bg-linear-to-r from-[#3752FD] to-[#9BA8F8] items-center h-30 rounded-md
+                    col-span-2 px-10">
                     <div class="mr-10">
                         <img src="./assets/board.png" alt="">
                     </div>
@@ -59,13 +55,14 @@
                     </div>
                 </div>
 
-                <div class="flex justify-center main-background items-center h-30 rounded-md">
-                    <div class="bg-white p-3 rounded-full mr-5">
-                        <i class="fa-solid fa-calendar-days text-2xl"></i>
+
+                <div class="flex main-background items-center h-30 rounded-md">
+                    <div class="bg-white p-3 rounded-full ml-6">
+                        <i class="fa-solid fa-calendar-days text-3xl"></i>
                     </div>
-                    <div>
-                        <p class="text-gray-600">Task Assigned</p>
-                        <p class="text-3xl font-bold">03</p>
+                    <div class="ml-3">
+                        <p id="forDay" class="text-2xl mb-2"></p>
+                        <p id="forDate" class="text-2xl font-bold"></p>
                     </div>
                 </div>
             </div>
@@ -74,7 +71,7 @@
                 <div class="card main-background">
                     <div class="card-body">
                         <h2 class="bg-white w-32 text-center p-2 text-lg font-semibold text-gray-600">ShopEase</h2>
-                        <h3 class="text-xl font-bold py-2">Fix Mobile Button Issue</h3>
+                        <h3 id="cardTitle1" class="text-xl font-bold py-2">Fix Mobile Button Issue</h3>
                         <p class="bg-white mb-4">Debug using Chrome DevTools, check for overlapping elements, and ensure
                             onClick works
                             properly
@@ -85,7 +82,8 @@
                                 <p>Deadline</p>
                                 <p>21 March 2025</p>
                             </div>
-                            <button class="btn bg-blue-600 text-white text-lg">Completed</button>
+                            <button id="task1Button" class="btn bg-blue-600 text-white text-lg complete-btn"
+                                onclick="plus(), minus()">Completed</button>
                         </div>
                     </div>
                 </div>
@@ -93,7 +91,7 @@
                 <div class="card main-background">
                     <div class="card-body">
                         <h2 class="bg-white w-32 text-center p-2 text-lg font-semibold text-gray-600">CloudSync</h2>
-                        <h3 class="text-xl font-bold py-2">Add Dark Mode</h3>
+                        <h3 id="cardTitle2" class="text-xl font-bold py-2">Add Dark Mode</h3>
                         <p class="bg-white mb-4">Store the user's preference in localStorage, update CSS variables
                             dynamically, and apply a smooth transition effect.
                         </p>
@@ -102,7 +100,8 @@
                                 <p>Deadline</p>
                                 <p>21 March 2025</p>
                             </div>
-                            <button class="btn bg-blue-600 text-white text-lg">Completed</button>
+                            <button id="task2Button" class="btn bg-blue-600 text-white text-lg complete-btn"
+                                onclick="plus(), minus()">Completed</button>
                         </div>
                     </div>
                 </div>
@@ -110,7 +109,7 @@
                 <div class="card main-background">
                     <div class="card-body">
                         <h2 class="bg-white w-32 text-center p-2 text-lg font-semibold text-gray-600">SwiftPay</h2>
-                        <h3 class="text-xl font-bold py-2">Optimize Home page</h3>
+                        <h3 id="cardTitle3" class="text-xl font-bold py-2">Optimize Home page</h3>
                         <p class="bg-white mb-4">Debug using Chrome DevTools, check for overlapping elements, and ensure
                             onClick works properly
                             and ensure onClick works properly
@@ -120,7 +119,8 @@
                                 <p>Deadline</p>
                                 <p>21 March 2025</p>
                             </div>
-                            <button class="btn bg-blue-600 text-white text-lg">Completed</button>
+                            <button id="task3Button" class="btn bg-blue-600 text-white text-lg complete-btn"
+                                onclick="plus(), minus()">Completed</button>
                         </div>
                     </div>
                 </div>
@@ -128,7 +128,7 @@
                 <div class="card main-background">
                     <div class="card-body">
                         <h2 class="bg-white w-32 text-center p-2 text-lg font-semibold text-gray-600">Meta</h2>
-                        <h3 class="text-xl font-bold py-2">Add new emoji</h3>
+                        <h3 id="cardTitle4" class="text-xl font-bold py-2">Add new emoji</h3>
                         <p class="bg-white mb-4">Debug using Chrome DevTools, check for overlapping elements, and ensure
                             onClick works properly
                             and ensure onClick works properly
@@ -138,7 +138,8 @@
                                 <p>Deadline</p>
                                 <p>21 March 2025</p>
                             </div>
-                            <button class="btn bg-blue-600 text-white text-lg">Completed</button>
+                            <button id="task4Button" class="btn bg-blue-600 text-white text-lg complete-btn"
+                                onclick="plus(), minus()">Completed</button>
                         </div>
                     </div>
                 </div>
@@ -146,7 +147,7 @@
                 <div class="card main-background">
                     <div class="card-body">
                         <h2 class="bg-white w-32 text-center p-2 text-lg font-semibold text-gray-600">Google LLC</h2>
-                        <h3 class="text-xl font-bold py-2">Integrate OpenAI API</h3>
+                        <h3 id="cardTitle5" class="text-xl font-bold py-2">Integrate OpenAI API</h3>
                         <p class="bg-white mb-4">Debug using Chrome DevTools, check for overlapping elements, and ensure
                             onClick works
                             properly
@@ -157,7 +158,8 @@
                                 <p>Deadline</p>
                                 <p>21 March 2025</p>
                             </div>
-                            <button class="btn bg-blue-600 text-white text-lg">Completed</button>
+                            <button id="task5Button" class="btn bg-blue-600 text-white text-lg complete-btn"
+                                onclick="plus(), minus()">Completed</button>
                         </div>
                     </div>
                 </div>
@@ -165,7 +167,7 @@
                 <div class="card main-background">
                     <div class="card-body">
                         <h2 class="bg-white w-32 text-center p-2 text-lg font-semibold text-gray-600">Glassdoar</h2>
-                        <h3 class="text-xl font-bold py-2">Improve Job searching</h3>
+                        <h3 id="cardTitle6" class="text-xl font-bold py-2">Improve Job searching</h3>
                         <p class="bg-white mb-4">Debug using Chrome DevTools, check for overlapping elements, and ensure
                             onClick works
                             properly
@@ -176,7 +178,8 @@
                                 <p>Deadline</p>
                                 <p>21 March 2025</p>
                             </div>
-                            <button class="btn bg-blue-600 text-white text-lg">Completed</button>
+                            <button id="task6Button" class="btn bg-blue-600 text-white text-lg complete-btn"
+                                onclick="plus(), minus()">Completed</button>
                         </div>
                     </div>
                 </div>
@@ -190,10 +193,17 @@
                 <h3 class="text-xl font-semibold">Activity Log</h3>
             </div>
             <div class="text-center mt-5 pb-5 border-bottom">
-                <button class="btn bg-blue-600 text-lg text-white">Clear History</button>
+                <button id="clearHistoryButton" class="btn bg-blue-600 text-lg text-white">Clear History</button>
+            </div>
+            <div id="activityLog" class="w-80 mx-auto">
+
             </div>
         </div>
     </main>
+    <script src="./script/Completed.js"></script>
+    <script src="./script/clearHistory.js"></script>
+    <script src="./script/randomColorGenerator.js"></script>
+    <script src="./script/blogPage.js"></script>
 </body>
 
 </html>
